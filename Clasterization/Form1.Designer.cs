@@ -195,8 +195,8 @@
             this.Controls.Add(this.doNextStep);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Clasterization";
+            this.Text = "Clasterization";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
