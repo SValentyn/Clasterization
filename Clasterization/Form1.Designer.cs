@@ -40,7 +40,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.doUploadData = new System.Windows.Forms.Button();
-            this.doNextStepInClasters = new System.Windows.Forms.Button();
+            this.doNextStep = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,63 @@
             this.label2.Size = new System.Drawing.Size(120, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Number of points:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Dataset:";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(53, 43);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(86, 21);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "birch1.txt";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(53, 70);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(86, 21);
+            this.radioButton2.TabIndex = 13;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "birch2.txt";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(53, 97);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(86, 21);
+            this.radioButton3.TabIndex = 14;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "birch3.txt";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(53, 124);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(62, 21);
+            this.radioButton4.TabIndex = 15;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "s1.txt";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // countClasterBox
             // 
@@ -107,63 +164,6 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Dataset:";
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(53, 124);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(62, 21);
-            this.radioButton4.TabIndex = 15;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "s1.txt";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(53, 97);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(86, 21);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "birch3.txt";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(53, 70);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(86, 21);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "birch2.txt";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(53, 43);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(86, 21);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "birch1.txt";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
             // doUploadData
             // 
             this.doUploadData.Location = new System.Drawing.Point(12, 486);
@@ -174,16 +174,16 @@
             this.doUploadData.UseVisualStyleBackColor = true;
             this.doUploadData.Click += new System.EventHandler(this.DoUploadData_Click);
             // 
-            // doNextStepInClasters
+            // doNextStep
             // 
-            this.doNextStepInClasters.Enabled = false;
-            this.doNextStepInClasters.Location = new System.Drawing.Point(12, 521);
-            this.doNextStepInClasters.Name = "doNextStepInClasters";
-            this.doNextStepInClasters.Size = new System.Drawing.Size(218, 29);
-            this.doNextStepInClasters.TabIndex = 2;
-            this.doNextStepInClasters.Text = "Next step";
-            this.doNextStepInClasters.UseVisualStyleBackColor = true;
-            this.doNextStepInClasters.Click += new System.EventHandler(this.DoNextStepInClasters_Click);
+            this.doNextStep.Enabled = false;
+            this.doNextStep.Location = new System.Drawing.Point(12, 521);
+            this.doNextStep.Name = "doNextStep";
+            this.doNextStep.Size = new System.Drawing.Size(218, 29);
+            this.doNextStep.TabIndex = 2;
+            this.doNextStep.Text = "Next step";
+            this.doNextStep.UseVisualStyleBackColor = true;
+            this.doNextStep.Click += new System.EventHandler(this.DoNextStepInClasters_Click);
             // 
             // Form1
             // 
@@ -192,7 +192,7 @@
             this.ClientSize = new System.Drawing.Size(1657, 797);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.doUploadData);
-            this.Controls.Add(this.doNextStepInClasters);
+            this.Controls.Add(this.doNextStep);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
@@ -213,7 +213,7 @@
         private System.Windows.Forms.TextBox countElementBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button doUploadData;
-        private System.Windows.Forms.Button doNextStepInClasters;
+        private System.Windows.Forms.Button doNextStep;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;

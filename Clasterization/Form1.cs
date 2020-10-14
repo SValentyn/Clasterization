@@ -8,9 +8,9 @@ using System.Windows.Forms;
 namespace Clasterization {
     public partial class Form1 : Form {
         private ClasterCreator2D clasterCreator;
-        private Graphics graphics;
-        private Random random;
         private List<Color> colors;
+        private Graphics graphics;
+        private readonly Random random;
 
         public Form1() {
             InitializeComponent();
@@ -32,16 +32,16 @@ namespace Clasterization {
         }
 
         private void AddAdditionColorsToList(int count) {
-            for (int i = 0; i < count; i++) {
-                int red = random.Next(100, 250);
-                int green = random.Next(100, 250);
-                int blue = random.Next(100, 250);
+            for (var i = 0; i < count; i++) {
+                var red = random.Next(100, 250);
+                var green = random.Next(100, 250);
+                var blue = random.Next(100, 250);
                 colors.Add(Color.FromArgb(red, green, blue));
             }
         }
 
         private void ShowClasters() {
-            List<Claster> clasters = PreparationOutput.ChangeClastersToOutput(
+            var clasters = PreparationOutput.ChangeClastersToOutput(
                 new Point2D(pictureBox1.Size.Width, pictureBox1.Size.Height),
                 clasterCreator.MinPoint2D, clasterCreator.MaxPoint2D,
                 clasterCreator.GetClasters);
@@ -51,15 +51,14 @@ namespace Clasterization {
             graphics = pictureBox1.CreateGraphics();
 
             for (var i = 0; i < clasters.Count; i++) {
-                Pen penB = new Pen(colors[i], 2.65f);
-                Pen penL = new Pen(colors[i], 1.65f);
+                var penB = new Pen(colors[i], 2.65f);
+                var penL = new Pen(colors[i], 1.65f);
 
-                foreach (Point2D point in clasters[i].GetPoints) {
+                foreach (var point in clasters[i].GetPoints)
                     graphics.DrawEllipse(penB, (int) point.X, (int) point.Y, 1.05f, 1.05f);
-                   //  graphics.DrawLine(penL,
-                   //      (float) point.X, (float) point.Y,
-                   //      (float) clasters[i].GetCenter.X, (float) clasters[i].GetCenter.Y);
-                }
+                //  graphics.DrawLine(penL,
+                //      (float) point.X, (float) point.Y,
+                //      (float) clasters[i].GetCenter.X, (float) clasters[i].GetCenter.Y);
             }
         }
 
@@ -96,19 +95,17 @@ namespace Clasterization {
                 return;
             }
 
-            doNextStepInClasters.Enabled = true;
+            doNextStep.Enabled = true;
             UploadData(countClasters);
             ShowClasters();
         }
 
         private void UploadData(int countClasters) {
-            if (countClasters > colors.Count) {
-                AddAdditionColorsToList(countClasters - colors.Count);
-            }
+            if (countClasters > colors.Count) AddAdditionColorsToList(countClasters - colors.Count);
 
             string path;
             StreamReader reader;
-            List<Point2D> points = new List<Point2D>();
+            var points = new List<Point2D>();
 
             /*
              * File Choice
@@ -147,14 +144,13 @@ namespace Clasterization {
              */
             if (reader != null) {
                 while (!reader.EndOfStream) {
-                    string[] lines = reader.ReadLine().Split(new char[] {' '});
-                    double[] data = new double[2];
-                    foreach (var line in lines) {
+                    var lines = reader.ReadLine().Split(' ');
+                    var data = new double[2];
+                    foreach (var line in lines)
                         if (!line.Equals("")) {
                             if (data[0] == 0) data[0] = Convert.ToDouble(line);
                             else if (data[0] != 0) data[1] = Convert.ToDouble(line);
                         }
-                    }
 
                     points.Add(new Point2D(data[0], data[1]));
                 }
@@ -165,32 +161,32 @@ namespace Clasterization {
 
         private static bool IfStringIsInteger(string str) {
             if (str.Count() < 1 || str.Count() > 13 || !str.All(char.IsDigit)) return false;
-            if (str.Count() < 13 || (str.Count() == 13 && (str[0] == 1 || str[0] == 2))) return true;
+            if (str.Count() < 13 || str.Count() == 13 && (str[0] == 1 || str[0] == 2)) return true;
             return false;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e) {
-            doNextStepInClasters.Enabled = false;
+            doNextStep.Enabled = false;
             countElementBox.Clear();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e) {
-            doNextStepInClasters.Enabled = false;
+            doNextStep.Enabled = false;
             countElementBox.Clear();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e) {
-            doNextStepInClasters.Enabled = false;
+            doNextStep.Enabled = false;
             countElementBox.Clear();
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e) {
-            doNextStepInClasters.Enabled = false;
+            doNextStep.Enabled = false;
             countElementBox.Clear();
         }
 
         private void countClasterBox_TextChanged(object sender, EventArgs e) {
-            doNextStepInClasters.Enabled = false;
+            doNextStep.Enabled = false;
         }
     }
 }
